@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>APP下载</title>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap_customize.css">
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.touchSwipe.min.js"></script>
+<script src="../js/js_ui.js"></script>
+<link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+<script>
+$(document).ready(function() {
+	$("#android_down_btn").click( function(){ $("#android_download_tips").fadeIn("fast"); });
+	$("#android_download_tips").click( function(){ $(this).fadeOut("fast"); });
+	$('#carousel-puhui').carousel({interval:false,wrap:false});
+	$("#carousel-puhui").swipe({
+		swipe : function(event, direction, distance, duration, fingerCount){
+			if(direction=="up"){
+				$("#carousel-puhui").carousel("next");
+			}
+			if(direction=="down"){
+				$("#carousel-puhui").carousel("prev");
+			}
+		}
+	});
+});
+</script>
+
+<div class="mask_tips" id="android_download_tips" style="display:none"><img src="../images/app_download/download_tips.png"></div>
+
+
+<!-- carousel -->
+<div id="carousel-puhui" class="full_body_box vertical carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-puhui" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-puhui" data-slide-to="1"></li>
+  </ol>
+
+  <!-- carousel-inner -->
+  <div class="carousel-inner" role="listbox">
+  	
+        <!--item-->
+        <div class="item text-center active">
+            <p>&nbsp;</p>
+            <div><img src="../images/common/header_logo_white.png" style="width:13em;margin-left:-1em;"></div>
+            <p class="content_padding">根据您的手机系统点击按钮，跳转到itunes，或者下载apk到手机安装</p>
+            <p>&nbsp;</p>
+            <p><a href="https://itunes.apple.com/cn/app/pu-hui-zai-xian/id928318796?mt=8" class="btn btn-default btn-lg" target="_blank" style="width:12em;"><span class="ilb_icon app_download_icon icon_ios"></span>iPhone版</a></p>
+            <p><a href="###" class="btn btn-default btn-lg" id="android_down_btn" style="width:12em;"><span class="ilb_icon app_download_icon icon_android"></span>Android版</a></p>
+        </div>
+        <!--End item-->
+        
+        <!--item-->
+        <div class="item text-center">
+            <img src="../images/common/carousel_bg.jpg" class="cus_bgimg">
+            <p>&nbsp;</p>
+            <p class="content_padding">点击按钮生成分享链接，可复制分享给您的好友</p>
+            <p>&nbsp;</p>
+            <p>
+                <button type="button" class="btn btn-default" target="_blank" style="width:8em;">生成微信链接</button>
+                &nbsp;
+                <button type="button" class="btn btn-default" target="_blank" style="width:8em;">生成普通链接</button>
+            </p>
+            <p class="content_padding" style="height:7em; overflow:hidden;">微信链接：<br>http://www61.atwiki.jp/3dsmh4g/pages/23.html#id_7e95880a</p>
+            <p><button type="button" class="btn btn-success" target="_blank" style="width:8em;">复制代码</button></p>
+        </div>
+        <!--End item-->
+    
+  </div>
+  <!-- End carousel-inner -->
+
+  <a class="left carousel-control" href="#carousel-puhui" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-puhui" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-down"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+<!-- End carousel -->
+
+
+</body>
+</html>
